@@ -1,1 +1,8 @@
-<p>repositories-list works!</p>
+<h1 class="text-2xl m-2">ioasys <span class="font-medium">Repositories</span> </h1>
+<div class="grid" >
+  @for (repository of repositories$ |async; track repository.name) {
+  <app-repository
+  [repository]="repository">
+  </app-repository>
+  }
+</div>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Repository } from './repository.model';
-import { catchError } from 'rxjs';
+import { catchError, first, groupBy, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,6 @@ export class RepositoryService {
   constructor(private httpClient: HttpClient) { }
 
   list() {
-    return this.httpClient.get<Repository[]>(this.API)
-      .pipe(
-        catchError(() => {
-          return [];
-        })
-        //tap(courses => console.log(courses))
-      );
+    return this.httpClient.get<Repository[]>(this.API);
   }
 }
