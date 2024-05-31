@@ -5,6 +5,7 @@ import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -13,8 +14,7 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     FloatLabelModule,
     InputTextModule,
-    InputGroupAddonModule,
-    InputGroupModule,
+    ReactiveFormsModule,
     ButtonModule,
     PasswordModule
   ],
@@ -22,5 +22,14 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+});
+
+public login(){
+  console.log('clicou')
+  console.log(this.loginForm.value);
+}
 
 }

@@ -1,23 +1,24 @@
 <main>
   <h1>ioasys <span class="title">Repositories</span></h1>
-  <div class="field">
-    <p-floatLabel>
-      <input pInputText id="email" />
-      <label for="email">Email</label>
-    </p-floatLabel>
-</div>
-<div class="field m-3">
-  <div class="formgrid grid">
-    <div class="field grid">
-      <p-floatLabel>
-        <p-password class="mr-2"/>
-        <label for="password">Senha</label>
-      </p-floatLabel>
+  <form [formGroup]="loginForm">
+    <div class="formgroup-inline">
+      <div class="field col-8">
+        <p-floatLabel>
+          <input pInputText id="email" formControlName="email" />
+          <label for="email">Email</label>
+        </p-floatLabel>
+      </div>
+      <div class="field col-8">
+        <div class="formgrid-inline">
+            <p-floatLabel>
+              <p-password class="" formControlName="password" />
+              <label for="password">Senha</label>
+            </p-floatLabel>
+            <button pButton class="mt-2" label="Entrar" pRipple (click)="login()">
+            </button>
+        </div>
 
-        <p-button [rounded]="true" label="Entrar" severity="secondary" size="small" />
+      </div>
     </div>
-
-  </div>
-</div>
-
+  </form>
 </main>
