@@ -1,11 +1,23 @@
 <main>
-  <h1>ioasys <span class="font-medium">Repositories</span> </h1>
-  <p-floatLabel>
-    <input pInputText id="email" />
-    <label for="email">Email</label>
-  </p-floatLabel>
-  <p-inputGroup>
-    <input type="text" pInputText placeholder="Senha" />
-    <button type="button" pButton label="Entrar no site">Entrar</button>
-  </p-inputGroup>
+  <h1>ioasys <span class="title">Repositories</span></h1>
+  <div class="field">
+    <p-floatLabel>
+      <input pInputText id="email" />
+      <label for="email">Email</label>
+    </p-floatLabel>
+</div>
+<div class="field m-3">
+  <div class="formgrid grid">
+    <div class="field grid">
+      <p-floatLabel>
+        <p-password class="mr-2"/>
+        <label for="password">Senha</label>
+      </p-floatLabel>
+
+        <p-button [rounded]="true" label="Entrar" severity="secondary" size="small" />
+    </div>
+
+  </div>
+</div>
+
 </main>
