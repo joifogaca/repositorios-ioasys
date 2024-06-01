@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { InputTextModule } from 'primeng/inputtext';
-import { FloatLabelModule } from 'primeng/floatlabel';
-import { MessageService } from 'primeng/api';
-import { PasswordModule } from 'primeng/password';
-import { ButtonModule } from 'primeng/button';
-import { ToastModule } from 'primeng/toast';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { ToastModule } from 'primeng/toast';
+import { AuthService } from './auth.service';
 
 
 @Component({
@@ -19,30 +20,37 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
     PasswordModule,
     ToastModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, AuthService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
 
   loginForm = new FormGroup({
-    email: new FormControl('',[Validators.required,
-      Validators.email]),
+    email: new FormControl('', [Validators.required,
+    Validators.email]),
     password: new FormControl('', [Validators.required,
-      Validators.minLength(5)]),
-});
+    Validators.minLength(5)]),
+  });
 
-constructor(private messageService: MessageService){}
+  constructor(private messageService: MessageService,
+    private authService: AuthService) { }
 
-public login(){
-  if(this.loginForm.valid){
+  public login() {
+    if (this.loginForm.valid) {
+
+      this.authService.login(
+        {
+          email: this.loginForm.controls.email.value,
+          password: this.loginForm.controls.password.value
+        });
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Usuário ou Senha inválido.' });
+
+    }
+    else {
+      this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Preencha os campos corretamente' });
+    }
 
   }
-  else{
-    this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Preencha os campos corretamente' });
-  }
-  this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Usuário ou Senha inválido.' });
-
-}
 
 }
