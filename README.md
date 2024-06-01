@@ -2,26 +2,48 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
-## Development server
+## Deploy da aplicação (Vercel)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Aplicação rodando em produção:
 
-## Code scaffolding
+[https://repositorios-ioasys.vercel.app/login](https://repositorios-ioasys.vercel.app/login)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## O que foi desenvolvido
 
-## Build
+Uma aplicação Angular que realiza uma autenticação.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+E lista os meus repósitórios do gitHub, utilizando a API do GitHub.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+De acordo com os dados consumidos pela API:
 
-## Running end-to-end tests
+https://api.github.com/users/joifogaca/repos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Setup do projeto
 
-## Further help
+```gh repo clone joifogaca/repositorios-ioasys
+
+cd repositorios-ioasys
+
+npm install 
+```
+
+
+### Como rodar o projeto
+
+  
+
+Rode`ng serve` para rodar em ambiente de desenvolvimento. Acesse a URL `http://localhost:4200/`.
+
+## Dependências e Versões Necessárias
+
+Os frameworks utilizados na aplicação foram:
+
+[PrimeNg](https://primeng.org/)
+
+[PrimeFlex](https://primeflex.org/)
+
+
+
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
