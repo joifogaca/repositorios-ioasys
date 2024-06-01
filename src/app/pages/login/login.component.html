@@ -1,22 +1,65 @@
 <main>
+  <p-toast />
   <h1>ioasys <span class="title">Repositories</span></h1>
   <form [formGroup]="loginForm">
     <div class="formgroup-inline">
-      <div class="field col-8">
+      <div class="field col-12">
         <p-floatLabel>
-          <input pInputText id="email" formControlName="email" />
+          <input pInputText id="email"
+          aria-describedby="email-help"
+          formControlName="email" />
           <label for="email">Email</label>
         </p-floatLabel>
+        @if(loginForm.controls.email.touched && loginForm.controls.email.invalid){
+
+          @if(loginForm.controls.email.errors?.['required']){
+            <small class="text-primary-50" id="username-help">
+              Preencha o campo com seu email.
+          </small>
+          }
+
+          @if(loginForm.controls.email.errors?.['email']){
+            <small class="text-primary-50" id="username-help">
+             Digite um email válido.
+          </small>
+          }
+        }
+
       </div>
-      <div class="field col-8">
-        <div class="formgrid-inline">
+      <div class="field col-4">
             <p-floatLabel>
-              <p-password class="" formControlName="password" />
+              <input type="password"
+              pInputText
+              class=""
+              formControlName="password"
+               />
               <label for="password">Senha</label>
             </p-floatLabel>
-            <button pButton class="mt-2" label="Entrar" pRipple (click)="login()">
+
+            @if(loginForm.controls.password.touched && loginForm.controls.password.invalid){
+
+              @if(loginForm.controls.password.errors?.['required']){
+                <small class="text-primary-50" id="username-help">
+                  Senha obrigátoria!
+               </small>
+              }
+
+               @if(loginForm.controls.password.errors?.['minlength']){
+                <small class="text-primary-50" id="username-help">
+                  A senha possui pelo menos
+                  {{ loginForm.controls.password.errors?.['minlength']?.requiredLength }}
+                  caracteres.
+               </small>
+              }
+              }
+
+            <button pButton
+            class="mt-3" label="Entrar"
+            pRipple
+            [outlined]="true"
+            severity="contrast"
+            (click)="login()">
             </button>
-        </div>
 
       </div>
     </div>
