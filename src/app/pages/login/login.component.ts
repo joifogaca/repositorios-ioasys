@@ -20,7 +20,9 @@ import { AuthService } from './auth.service';
     PasswordModule,
     ToastModule
   ],
-  providers: [MessageService, AuthService],
+  providers: [ AuthService,
+    MessageService
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

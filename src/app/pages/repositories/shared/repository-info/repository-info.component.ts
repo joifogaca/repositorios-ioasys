@@ -1,19 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { CardModule } from 'primeng/card';
 import { Repository } from '../repository.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-repository',
+  selector: 'app-repository-info',
   standalone: true,
-  imports: [CardModule,
+  imports: [
     CommonModule
   ],
-  templateUrl: './repository.component.html',
-  styleUrl: './repository.component.scss'
+  templateUrl: './repository-info.component.html',
+  styleUrl: './repository-info.component.scss'
 })
-export class RepositoryComponent {
+export class RepositoryInfoComponent {
 
   @Input() repository!: Repository;
-
 }

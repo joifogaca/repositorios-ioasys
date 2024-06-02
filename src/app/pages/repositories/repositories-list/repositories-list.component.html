@@ -2,7 +2,8 @@
 <div class="grid" >
   @for (repository of repositories$ |async; track repository.name) {
   <app-repository
-  [repository]="repository">
+  [repository]="repository"
+  (openModalRepository)="openModal($event)">
   </app-repository>
   }
 </div>

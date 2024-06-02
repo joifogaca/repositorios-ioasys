@@ -1,0 +1,14 @@
+
+
+<div
+(click)="openModal(repository)"
+class="col-3 m-1 border-round">
+<p-card
+[style]="{width: '360px', height: '300px'}"
+[header]="repository.name"
+>
+<app-repository-info
+[repository]="repository"
+></app-repository-info>
+</p-card>
+</div>
