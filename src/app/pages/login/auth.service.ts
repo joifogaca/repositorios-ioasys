@@ -1,7 +1,8 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, Signal, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './user.model';
+import { User } from './user-login.model';
 import { BehaviorSubject } from 'rxjs';
+import { UserData } from './user-data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,25 +12,28 @@ export class AuthService {
   private isAuthenticated = signal(false);
 
   constructor(private router: Router) {
-
   }
 
-  login(user: User) {
-    console.log(user);
+  public login(user: User) {
     if (user.email === 'admin@email.com' &&
     user.password === '123456') {
-      console.log('no if');
       this.isAuthenticated.set(true);
-      console.log(this.isAuthenticated);
       this.router.navigate(['/']);
     }else{
       this.isAuthenticated.set(false);
     }
   }
 
-  public isUserAuthenticated() {
+  logout(){
+    this.isAuthenticated.set(false);
+    this.router.navigate(['login']);
+  }
 
-    console.log(this.isAuthenticated);
+  public isUserAuthenticated(): Signal<boolean> {
     return this.isAuthenticated;
+  }
+
+  public getUserData(): UserData {
+    return { name: 'Joice', email: 'admin@email.com'};
   }
 }

@@ -1,0 +1,14 @@
+
+
+
+// Estilos para o elemento que você quer ocultar em dispositivos móveis
+#welcome {
+  display: block; // Estilo padrão para telas maiores
+
+  // Ocultar o elemento em telas menores que o breakpoint definido
+  @media (max-width: 670px) {
+
+      display: none; // Estilo padrão para telas maiores
+    }
+  }
+

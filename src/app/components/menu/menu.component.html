@@ -1,0 +1,21 @@
+<p-menubar styleClass="border-none bg-white-alpha-90">
+  <ng-template pTemplate="start">
+    <div class="flex flex-row">
+      <img class="flex-initial flex" src="assets/img/logo-black.png" width="105" height="40">
+      <span class="font-medium text-3xl pl-2 pt-1"> {{ pageName }}</span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="flex flex-row ">
+      <span id=welcome>
+        <p class="flex-initial flex mr-2">Bem vindo(a),  <span class="font-semibold ml-1">{{ user.name }}</span></p>
+      </span>
+      <p-button icon="pi pi-sign-out"
+      [rounded]="true" [text]="true"
+      [raised]="true" severity="secondary"
+      (onClick)="logout()" />
+    </div>
+    </ng-template>
+
+
+</p-menubar>

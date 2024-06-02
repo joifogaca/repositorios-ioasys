@@ -7,11 +7,14 @@ import { RepositoryCardComponent } from '../shared/repository-card/repository-ca
 import { ModalComponent } from '../shared/repository-modal/modal-repository.component';
 import { Repository } from '../shared/repository.model';
 import { RepositoryService } from '../shared/repository.service';
+import { MenuComponent } from '../../../components/menu/menu.component';
 
 @Component({
   selector: 'app-repositories-list',
   standalone: true,
-  imports: [CommonModule, RepositoryCardComponent],
+  imports: [CommonModule, RepositoryCardComponent,
+    MenuComponent
+  ],
   providers: [RepositoryService,
     DialogService,
     DynamicDialogRef,

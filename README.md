@@ -31,9 +31,16 @@ npm install
 
 ### Como rodar o projeto
 
-  
-
 Rode`ng serve` para rodar em ambiente de desenvolvimento. Acesse a URL `http://localhost:4200/`.
+
+
+#### Login
+
+Para logar na aplicação, utilize o acesso abaixo:
+
+```email: admin@email.com
+
+senha: 123456 ```
 
 ## Dependências e Versões Necessárias
 
