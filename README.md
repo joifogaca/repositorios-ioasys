@@ -50,6 +50,8 @@ Os frameworks utilizados na aplicação foram:
 
 [PrimeFlex](https://primeflex.org/)
 
+[Prime Icons](https://primeng.org/icons)
+
 
 
 
