@@ -6,7 +6,8 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
-import { AuthService } from './auth.service';
+import { AuthService } from '../shared/auth.service';
+
 
 
 @Component({
@@ -20,7 +21,7 @@ import { AuthService } from './auth.service';
     PasswordModule,
     ToastModule
   ],
-  providers: [ AuthService,
+  providers: [AuthService,
     MessageService
   ],
   templateUrl: './login.component.html',

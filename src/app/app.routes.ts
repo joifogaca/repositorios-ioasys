@@ -1,7 +1,10 @@
 import { Routes } from '@angular/router';
-import { authGuard } from './pages/login/auth-guard.guard';
-import { LoginComponent } from './pages/login/login.component';
+
+
 import { RepositoriesListComponent } from './pages/repositories/repositories-list/repositories-list.component';
+import { LoginComponent } from './pages/login-page/login/login.component';
+import { authGuard } from './pages/login-page/shared/auth-guard.guard';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'repositories', pathMatch: 'full' },

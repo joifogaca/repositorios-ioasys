@@ -1,8 +1,8 @@
-import { Component, Input, Signal, WritableSignal, signal } from '@angular/core';
-import { MenubarModule } from 'primeng/menubar';
+import { Component, Input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { AuthService } from '../../pages/login/auth.service';
-import { UserData } from '../../pages/login/user-data.model';
+import { MenubarModule } from 'primeng/menubar';
+import { AuthService } from '../../pages/login-page/shared/auth.service';
+import { UserData } from '../../pages/login-page/shared/user-data.model';
 
 @Component({
   selector: 'app-menu',
@@ -24,9 +24,9 @@ export class MenuComponent {
   constructor(private authService: AuthService) {
 
     this.user = this.authService.getUserData();
-   }
-logout() {
-this.authService.logout();
-}
+  }
+  logout() {
+    this.authService.logout();
+  }
 
 }

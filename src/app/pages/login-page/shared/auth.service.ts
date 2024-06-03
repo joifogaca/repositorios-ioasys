@@ -1,8 +1,7 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './user-login.model';
-import { BehaviorSubject } from 'rxjs';
 import { UserData } from './user-data.model';
+import { User } from './user-login.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +15,15 @@ export class AuthService {
 
   public login(user: User) {
     if (user.email === 'admin@email.com' &&
-    user.password === '123456') {
+      user.password === '123456') {
       this.isAuthenticated.set(true);
       this.router.navigate(['/']);
-    }else{
+    } else {
       this.isAuthenticated.set(false);
     }
   }
 
-  logout(){
+  logout() {
     this.isAuthenticated.set(false);
     this.router.navigate(['login']);
   }
@@ -34,6 +33,6 @@ export class AuthService {
   }
 
   public getUserData(): UserData {
-    return { name: 'Joice', email: 'admin@email.com'};
+    return { name: 'Joice', email: 'admin@email.com' };
   }
 }
