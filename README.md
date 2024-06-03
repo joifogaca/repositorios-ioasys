@@ -19,6 +19,16 @@ De acordo com os dados consumidos pela API:
 
 https://api.github.com/users/joifogaca/repos
 
+#### Login
+
+Para logar na aplicação, utilize o acesso abaixo:
+
+```
+email: admin@email.com
+
+senha: 123456
+```
+
 ## Setup do projeto
 
 ```gh repo clone joifogaca/repositorios-ioasys
@@ -34,13 +44,7 @@ npm install
 Rode`ng serve` para rodar em ambiente de desenvolvimento. Acesse a URL `http://localhost:4200/`.
 
 
-#### Login
 
-Para logar na aplicação, utilize o acesso abaixo:
-
-```email: admin@email.com
-
-senha: 123456 ```
 
 ## Dependências e Versões Necessárias
 
@@ -52,7 +56,3 @@ Os frameworks utilizados na aplicação foram:
 
 [Prime Icons](https://primeng.org/icons)
 
-
-
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
