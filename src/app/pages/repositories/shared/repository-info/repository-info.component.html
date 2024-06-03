@@ -1,6 +1,6 @@
 <div>
   <p class="text-xl font-semibold"> {{ repository.name }}</p>
-  <a class="text-sm mb-3" href="{{ repository.url }}"> Acesse o Repositório</a>
+  <a class="text-sm mb-3" href="{{ repository.svn_url }}"> Acesse o Repositório</a>
 <p><span class="font-semibold"> Data de criação:</span> {{ repository.created_at | date:'dd/MM/yyyy' }}</p>
 <p *ngIf="repository.description"><span class="font-semibold"> Descrição:</span> {{ repository.description }}</p>
 <p *ngIf="repository.language"><span class="font-semibold"> Linguagem:</span> {{ repository.language }}</p>

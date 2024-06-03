@@ -8,11 +8,20 @@ import { ModalComponent } from '../shared/repository-modal/modal-repository.comp
 import { Repository } from '../shared/repository.model';
 import { RepositoryService } from '../shared/repository.service';
 import { MenuComponent } from '../../../components/menu/menu.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { ButtonModule } from 'primeng/button';
+import { FormsModule } from '@angular/forms';
+import { DividerModule } from 'primeng/divider';
+import { SliderModule } from 'primeng/slider';
+
 
 @Component({
   selector: 'app-repositories-list',
   standalone: true,
-  imports: [CommonModule, RepositoryCardComponent,
+  imports: [CommonModule,
+    RepositoryCardComponent,
+    PaginatorModule,
+    ButtonModule, DividerModule, SliderModule, FormsModule,
     MenuComponent
   ],
   providers: [RepositoryService,
@@ -28,7 +37,10 @@ export class RepositoriesListComponent {
   repositories$!: Observable<any>;
   ref: DynamicDialogRef | undefined;
 
+
   constructor(private repositoryService: RepositoryService,
+
+
     public dialogService: DialogService
   ) {
   }
@@ -48,6 +60,7 @@ export class RepositoriesListComponent {
       baseZIndex: 10000,
       data: { repository: repository }
     })
-    console.log(repository)
   }
+
+
 }

@@ -1,13 +1,10 @@
 <div class="m-4 p-4">
-<app-menu
-pageName="Repositórios"
-></app-menu>
-<div class="grid mt-4" >
-  @for (repository of repositories$ |async; track repository.name) {
-  <app-repository
-  [repository]="repository"
-  (openModalRepository)="openModal($event)">
-  </app-repository>
-  }
-</div>
+  <app-menu pageName="Repositórios"></app-menu>
+  <div class="grid mt-4">
+    @for (repository of repositories$ |async; track repository.name) {
+    <app-repository [repository]="repository" (openModalRepository)="openModal($event)">
+    </app-repository>
+    }
+  </div>
+
 </div>
