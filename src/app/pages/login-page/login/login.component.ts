@@ -47,11 +47,11 @@ export class LoginComponent {
           email: this.loginForm.controls.email.value,
           password: this.loginForm.controls.password.value
         });
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Usuário ou Senha inválido.' });
+      this.messageService.add({ severity: 'error', detail: 'Usuário ou Senha inválido.', life: 3000 });
 
     }
     else {
-      this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Preencha os campos corretamente' });
+      this.messageService.add({ severity: 'warn', detail: 'Preencha os campos corretamente', life: 3000 });
     }
 
   }

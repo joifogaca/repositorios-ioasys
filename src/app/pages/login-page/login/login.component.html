@@ -1,16 +1,15 @@
 <main>
-  <p-toast />
+  <p-toast position="bottom-left" />
   <h1>ioasys <span class="title">Repositories</span></h1>
   <form [formGroup]="loginForm">
     <div class="formgroup-inline">
       <div class="field col-12">
         <p-floatLabel>
           <input pInputText id="email"
-          variant="filled"
           aria-labelledby="emailLabel"
           aria-describedby="emailNaoPreenchido emailInvalido"
           formControlName="email" />
-          <label id="emailLabel" for="email">Email</label>
+          <label id="emailLabel" class="text-800" for="email">Email</label>
         </p-floatLabel>
         @if(loginForm.controls.email.touched && loginForm.controls.email.invalid){
 
@@ -34,10 +33,9 @@
               aria-describedby="SenhaEmBranco SenhaSemMinimoCaracteres"
               aria-labelledby="senhaLabel"
               pInputText
-              variant="filled"
               formControlName="password"
                />
-              <label id="senhaLabel" for="password">Senha</label>
+              <label class="text-800" id="senhaLabel" for="password">Senha</label>
             </p-floatLabel>
 
             @if(loginForm.controls.password.touched && loginForm.controls.password.invalid){
