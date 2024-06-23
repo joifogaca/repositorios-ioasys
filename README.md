@@ -43,6 +43,19 @@ npm install
 
 Rode`ng serve` para rodar em ambiente de desenvolvimento. Acesse a URL `http://localhost:4200/`.
 
+#### Com docker 
+
+Na raiz do projeto, realizar o build:
+
+`docker build -t angular-repositorios-ioasys . `
+
+Rodar a aplicação:
+
+`docker run -p 4200:4200 angular-repositorios-ioasys `
+
+
+
+
 
 
 
