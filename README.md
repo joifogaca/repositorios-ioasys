@@ -69,3 +69,7 @@ Os frameworks utilizados na aplicação foram:
 
 [Prime Icons](https://primeng.org/icons)
 
+### Links Utéis 
+
+[Configurando ESLint e Prettier no Angular:](https://medium.com/@leogouveia/configurando-eslint-e-prettier-no-angular-guia-pr%C3%A1tico-para-aprimorar-a-qualidade-do-c%C3%B3digo-3f0827017c4a#:~:text=Este%20comando%20vai%20realizar%20as%20seguintes%20a%C3%A7%C3%B5es%3A%201,as%20configura%C3%A7%C3%B5es%20de%20lint%20para%20o%20Angular%20CLI.)
+
