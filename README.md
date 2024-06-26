@@ -53,12 +53,6 @@ Rodar a aplicação:
 
 `docker run -p 4200:4200 angular-repositorios-ioasys `
 
-
-
-
-
-
-
 ## Dependências e Versões Necessárias
 
 Os frameworks utilizados na aplicação foram:
@@ -68,6 +62,14 @@ Os frameworks utilizados na aplicação foram:
 [PrimeFlex](https://primeflex.org/)
 
 [Prime Icons](https://primeng.org/icons)
+
+[ESLint] (https://eslint.org/)
+
+[Prettier](https://prettier.io/)
+
+#### Rodando Lint
+
+`npm run lint`
 
 ### Links Utéis 
 
